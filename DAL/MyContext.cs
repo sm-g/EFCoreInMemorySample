@@ -14,7 +14,13 @@ namespace DAL
         {
         }
 
-        public virtual DbSet<Foo> Foos { get; set; }
+        public virtual DbSet<DAL.Models.Import> Imports { get; set; }
+        public virtual DbSet<DAL.Models.ImportUser> Users { get; set; }
+        public virtual DbSet<DAL.Models.ImportProject> Projects { get; set; }
+        public virtual DbSet<DAL.Models.ImportCustomer> Customers { get; set; }
+        public virtual DbSet<DAL.Models.ImportGroup> Groups { get; set; }
+        public virtual DbSet<DAL.Models.ImportZone> Zones { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.SetSimpleUnderscoreTableNameConvention(true);
