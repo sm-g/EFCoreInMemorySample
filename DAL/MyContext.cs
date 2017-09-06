@@ -15,5 +15,9 @@ namespace DAL
         }
 
         public virtual DbSet<Foo> Foos { get; set; }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.SetSimpleUnderscoreTableNameConvention(true);
+        }
     }
 }

@@ -28,10 +28,9 @@ namespace WebApp
             services.AddEntityFrameworkMySql()
                 .AddDbContext<MyContext>(o =>
                 {
-#if DEBUG
+                    o.UseLoggerFactory(new DbLoggerFactory(true));
                     o.EnableSensitiveDataLogging();
-#endif
-                    o.UseMySql("connection string");
+                    o.UseMySql("server=localhost;port=3306;database=efcoretest;uid=root;password=1111");
                 });
         }
 
